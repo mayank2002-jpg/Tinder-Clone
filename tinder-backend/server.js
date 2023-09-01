@@ -34,9 +34,10 @@ app.post("/tinder/cards", (req, res) => {
 });
 
 app.get("/tinder/cards", (req, res) => {
-  Cards.find().then((err, data) => {
+  Cards.find((err, data) => {
     if (err) {
-      res.status(500).send(err);
+      console.error(err);
+      res.status(500).send(err); // Send an error response
     } else {
       res.status(200).send(data);
     }
