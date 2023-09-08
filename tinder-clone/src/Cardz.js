@@ -12,7 +12,6 @@ function Cardz() {
         const req = await axios.get("http://localhost:8001/tinder/cards");
         setPeople(req.data);
       } catch (error) {
-        // Handle the error here (e.g., log it, display an error message)
         console.error("Error fetching data:", error);
       }
     }
